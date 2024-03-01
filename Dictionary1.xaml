@@ -1,0 +1,282 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="ToolBarTrayButtonStyle" TargetType="Button">
+
+        <Setter Property="Height" Value="18" />
+        <Setter Property="Width" Value="17" />
+
+    </Style>
+
+    <!-- #region Triggers -->
+    <Style x:Key="YourCheckBoxStyle" TargetType="{x:Type CheckBox}">
+        <Setter Property="IsChecked" Value="{Binding IsChecked, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+        <Style.Triggers>
+            <Trigger Property="IsChecked" Value="True">
+                <Setter Property="IsEnabled" Value="False"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style TargetType="Label" x:Key="NotificationButtonStyle">
+        <Setter Property="ToolTip" Value="Если у вас есть какие-нибудь идеи по поводу названия, буду рад услышать ваше мнение" />
+        
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Visibility" Value="Visible" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style TargetType="Label" x:Key="NewNotificationButtonStyle">
+        <Setter Property="ToolTip" Value="Если у вас есть какие-нибудь идеи по поводу того для чего будет это приложение и что ещё туда добавит, буду рад услышать ваше мнение" />
+
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="Visibility" Value="Visible" />
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <!-- #endregion -->
+    
+    <!-- #region DockPanel -->
+    <Style x:Key="GradientBackgraundWindow" TargetType="DockPanel">
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                    <GradientStop Offset="0" Color="Red"/>
+                    <GradientStop Offset="1" Color="Blue"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    <!-- #endregion -->
+    
+    <!-- #region DEFAULT -->
+    <Style x:Key="StyleDefault" 
+           TargetType="{x:Type Control}">
+        <Setter Property="FontSize" 
+                Value="16"/>
+        <Setter Property="Margin" 
+                Value="10"/>
+        <Setter Property="Padding" 
+                Value="5"/>
+    </Style>
+    <!-- #endregion -->
+
+    <!-- #region BUTTONS -->
+    <Style  x:Key="StyleWindowPanelButtons" 
+            TargetType="{x:Type Button}">
+        <Setter Property="HorizontalAlignment" 
+                Value="Right"/>
+        <Setter Property="Width" 
+                Value="25"/>
+        <Setter Property="Background" 
+                Value="Transparent"/>
+        <Setter Property="BorderBrush" 
+                Value="Transparent"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}">
+                        <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style  x:Key="StyleMinimizeWindowButton" 
+            TargetType="{x:Type Button}"
+            BasedOn="{StaticResource StyleWindowPanelButtons}">
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" 
+                     Value="True">
+                <Setter Property="Background"
+                        Value="Green"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    <Style  x:Key="StyleCloseButton" 
+            TargetType="{x:Type Button}"
+            BasedOn="{StaticResource StyleWindowPanelButtons}">
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" 
+                     Value="True">
+                <Setter Property="Background" 
+                        Value="Red"/>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+
+    <Style x:Key="StyleButtonDefault" 
+           TargetType="{x:Type Button}"
+           BasedOn="{StaticResource StyleDefault}">
+        <Setter Property="Foreground" 
+                Value="White"/>
+        <Setter Property="Width" 
+                Value="100"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border Background="{TemplateBinding Background}"
+                                BorderThickness="0"
+                                
+                                CornerRadius="20"
+                                Padding="10">
+                        <ContentPresenter HorizontalAlignment="Center"
+                                              VerticalAlignment="Center"/>
+                    </Border>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="StyleButtonInterface" 
+           TargetType="{x:Type Button}"
+           BasedOn="{StaticResource StyleButtonDefault}">
+        
+        <Setter Property="Width" 
+                Value="160"/>
+        <Setter Property="Background" 
+                Value="DarkBlue"/>
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="FontWeight" Value="Medium"/>
+                <Setter Property="Cursor" Value="Hand"/>
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="1,1" StartPoint="0,0">
+                            <GradientStop Color="DarkBlue"/>
+                            <GradientStop Color="#FF1E1EFF" Offset="1"/>
+                            <GradientStop Color="#FF0E31BB" Offset="0.555"/>
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Effect">
+                    <Setter.Value>
+                        <DropShadowEffect ShadowDepth="3" Color="Black"/>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="1,1" StartPoint="0,0">
+                            <GradientStop Color="#FF33077C" Offset="0.163"/>
+                            <GradientStop Color="#FF964EFF" Offset="1"/>
+                            <GradientStop Color="#FF521D95" Offset="0.557"/>
+                            <GradientStop Color="#FF150651" Offset="0"/>
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Foreground">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black"/>
+                            <GradientStop Color="#FF860074" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+    
+    <Style x:Key="StyleButtonNew" 
+           TargetType="{x:Type Button}"
+           BasedOn="{StaticResource StyleButtonDefault}">
+        <Setter Property="Background" 
+                Value="DarkBlue"/>
+    </Style>
+
+    <Style x:Key="StyleButtonWebWindow" 
+           TargetType="{x:Type Button}"
+           BasedOn="{StaticResource StyleButtonDefault}">
+        <Style.Triggers>
+            <Trigger Property="IsMouseOver" Value="True">
+                <Setter Property="FontWeight" Value="Medium"/>
+                <Setter Property="Cursor" Value="Hand"/>
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF040139"/>
+                            <GradientStop Color="#FF005105" Offset="1"/>
+                            <GradientStop Color="#FF005586" Offset="0.504"/>
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Effect">
+                    <Setter.Value>
+                        <DropShadowEffect ShadowDepth="3" Color="Black"/>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+            <Trigger Property="IsPressed" Value="True">
+                <Setter Property="Background">
+                    <Setter.Value>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FF011976"/>
+                            <GradientStop Color="#FF099202" Offset="1"/>
+                            <GradientStop Color="#FF1C9ABD" Offset="0.504"/>
+                        </LinearGradientBrush>
+                    </Setter.Value>
+                </Setter>
+                <Setter Property="Foreground" Value="#FF112900"/>
+            </Trigger>
+        </Style.Triggers>
+        <Setter Property="Background">
+            <Setter.Value>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF201044"/>
+                    <GradientStop Color="#FF1B3917" Offset="1"/>
+                    <GradientStop Color="#FF33615F" Offset="0.504"/>
+                </LinearGradientBrush>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
+    <Style x:Key="StyleButtonDelete" 
+           TargetType="{x:Type Button}"
+           BasedOn="{StaticResource StyleButtonDefault}">
+        <Setter Property="Background" 
+                Value="DarkRed"/>
+    </Style>
+    
+    <Style x:Key="StyleButtonClear" 
+           TargetType="{x:Type Button}"
+           BasedOn="{StaticResource StyleButtonDefault}">
+        <Setter Property="Background" 
+                Value="DarkOrange"/>
+    </Style>
+    <!-- #endregion -->
+
+    <!-- #region LABEL & INPUT -->
+    <Style x:Key="StyleLabel" 
+           TargetType="{x:Type Label}"
+           BasedOn="{StaticResource StyleDefault}">
+        <Setter Property="Width" 
+                Value="125"/>
+    </Style>
+    
+    <Style x:Key="StyleInput" 
+           TargetType="{x:Type TextBox}"
+           BasedOn="{StaticResource StyleDefault}">
+        <Setter Property="Width" 
+                Value="300"/>
+    </Style>
+    
+    <Style x:Key="StyleInputAge" 
+           TargetType="{x:Type TextBox}"
+           BasedOn="{StaticResource StyleDefault}">
+        <Setter Property="Width" 
+                Value="50"/>
+    </Style>
+    
+    <Style x:Key="StylePass" 
+           TargetType="{x:Type PasswordBox}"
+           BasedOn="{StaticResource StyleDefault}">
+        <Setter Property="Width" 
+                Value="300"/>
+    </Style>
+    <!-- #endregion -->
+    
+</ResourceDictionary>

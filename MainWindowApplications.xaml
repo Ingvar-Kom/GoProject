@@ -1,0 +1,172 @@
+﻿<Window x:Class="my_project.MainWindowApplications"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="MainWindowApplications" 
+        Height="555" 
+        MinHeight="555"
+        Width="800" 
+        MinWidth="800" 
+        WindowStyle="None"
+        AllowsTransparency="True"
+        xmlns:gif="https://github.com/XamlAnimatedGif/XamlAnimatedGif">
+
+    <Window.Resources>
+        <ResourceDictionary Source="Dictionary1.xaml"/>
+    </Window.Resources>
+
+    <DockPanel MouseDown="Label_MouseDown" 
+               LastChildFill="True" 
+               Style="{StaticResource GradientBackgraundWindow}">
+        
+        <StackPanel Orientation="Horizontal" 
+                    DockPanel.Dock="Top" 
+                    HorizontalAlignment="Right" >
+            <Button Content="_"
+                    x:Name="btn_Sv" 
+                    Click="Button_Minimized_Window_Click"
+                    Style="{StaticResource StyleMinimizeWindowButton}"/>
+            <Button Content="X"
+                    x:Name="btn_Close" 
+                    Click="Button_Close_Window_Click" 
+                    Style="{StaticResource StyleCloseButton}"/>
+        </StackPanel>
+
+        <ToolBarTray DockPanel.Dock="Top" >
+            <ToolBar >
+                <Button Click="Mes_Demo"
+                        Style="{StaticResource ToolBarTrayButtonStyle}" >
+                    <Image  Source="/Assets/picture/ButtonHome.png"/>
+                </Button>
+                <Button Click="New_Info_Messeg"
+                        Style="{StaticResource ToolBarTrayButtonStyle}">
+                    <Image  Source="/Assets/picture/ButtonInformation.png"/>
+                </Button>
+                <Button Click="Mes_Demo"
+                        Style="{StaticResource ToolBarTrayButtonStyle}">
+                    <Image  Source="/Assets/picture/ButtonInterface.png"/>
+                </Button>
+            </ToolBar>
+            <ToolBar>
+                <Button Click="Button_ImitationOfWebsiteOperation_Click"
+                        Style="{StaticResource ToolBarTrayButtonStyle}">
+                    <Image  Source="/Assets/picture/ButtonNet.png"   />
+                </Button>
+                <Button Click="Button_Search_Click"
+                        Style="{StaticResource ToolBarTrayButtonStyle}">
+                    <Image  Source="/Assets/picture/ButtonSearch.png"   />
+                </Button>
+                <Button Click="New_Messeg_Save"
+                        Style="{StaticResource ToolBarTrayButtonStyle}">
+                    <Image  Source="/Assets/picture/ButyonSave.png"   />
+                </Button>
+            </ToolBar>
+        </ToolBarTray>
+        
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="33*"/>
+                <ColumnDefinition Width="7*"/>
+            </Grid.ColumnDefinitions>
+            
+            <StackPanel Grid.Column="0" 
+                        Orientation="Vertical">
+                <StackPanel Orientation="Horizontal"
+                            Height="120" 
+                            Width="611" 
+                            Margin="10">
+                    <Image  x:Name="myImage" 
+                            gif:AnimationBehavior.SourceUri="/Assets/GIF/ImitationOfWebsiteOperationPlanet.gif"
+                            Width="179" 
+                            Height="119"/>
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock>АЛЬФА</TextBlock>
+                        <CheckBox Content="первый    этап" 
+                                  Checked="Checked_Lvl"
+                                  Style="{StaticResource YourCheckBoxStyle}"/>
+                        <CheckBox Content="второй    этап" 
+                                  Checked="Checked_Lvl"
+                                  Style="{StaticResource YourCheckBoxStyle}"/>
+                        <CheckBox Content="третий    этап" 
+                                  Checked="Checked_Lvl"
+                                  Style="{StaticResource YourCheckBoxStyle}"/>
+                        <CheckBox Content="четвёртый этап" 
+                                  Checked="Checked_Lvl"
+                                  Style="{StaticResource YourCheckBoxStyle}"/>
+                        <CheckBox Content="пятый     этап" 
+                                  Checked="Checked_LvlA"
+                                  Style="{StaticResource YourCheckBoxStyle}"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                            Height="120" 
+                            Width="611" 
+                            Margin="10">
+                    <Image  x:Name="myImage2" 
+                            gif:AnimationBehavior.SourceUri="/Assets/GIF/ImitationOfWebsiteOperation.gif" 
+                            Width="179" 
+                            Height="119"/>
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock>АМЕГА</TextBlock>
+                        <CheckBox Content="первый    этап" 
+                                  Checked="Checked_Lvl2"
+                                  Style="{StaticResource YourCheckBoxStyle}"/>
+                        <CheckBox Content="второй    этап" 
+                                  Checked="Checked_Lvl2"
+                                  Style="{StaticResource YourCheckBoxStyle}"/>
+                        <CheckBox Content="третий    этап" 
+                                  Checked="Checked_Lvl2"
+                                  Style="{StaticResource YourCheckBoxStyle}"/>
+                        <CheckBox Content="четвёртый этап" 
+                                  Checked="Checked_Lvl2"
+                                  Style="{StaticResource YourCheckBoxStyle}"/>
+                        <CheckBox Content="пятый     этап" 
+                                  Checked="Checked_Lvl2B"
+                                  Style="{StaticResource YourCheckBoxStyle}"/>
+                    </StackPanel>
+                </StackPanel>
+                <StackPanel Orientation="Horizontal"
+                            Height="120" 
+                            Width="611" 
+                            Margin="10">
+                    <Image  x:Name="myImage3" 
+                            gif:AnimationBehavior.SourceUri="/Assets/GIF/ImitationOfWebsiteOperation.gif"
+                            Width="179" 
+                            Height="119"/>
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock>ЛЯМБДА</TextBlock>
+                        <CheckBox Content="первый    этап" 
+                                  Checked="Checked_Lvl3"
+                                  Style="{StaticResource YourCheckBoxStyle}"/>
+                        <CheckBox Content="второй    этап" 
+                                  Checked="Checked_Lvl3"
+                                  Style="{StaticResource YourCheckBoxStyle}"/>
+                        <CheckBox Content="третий    этап" 
+                                  Checked="Checked_Lvl3"
+                                  Style="{StaticResource YourCheckBoxStyle}"/>
+                        <CheckBox Content="четвёртый этап" 
+                                  Checked="Checked_Lvl3"
+                                  Style="{StaticResource YourCheckBoxStyle}"/>
+                        <CheckBox Content="пятый     этап" 
+                                  Checked="Checked_Lvl3L"
+                                  Style="{StaticResource YourCheckBoxStyle}"/>
+                    </StackPanel>
+                </StackPanel>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" 
+                        Orientation="Vertical" 
+                        HorizontalAlignment="Center">
+                <Button Content="музыка" 
+                        Click="Button_Window_Muzic"
+                        Style="{StaticResource StyleButtonWebWindow}"/>
+                <Button Content="ЛК"
+                        Style="{StaticResource StyleButtonWebWindow}"
+                        Click="Button_Window_Web"/>
+            </StackPanel>
+        </Grid>
+        
+    </DockPanel>
+</Window>

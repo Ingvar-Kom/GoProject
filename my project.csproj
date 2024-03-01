@@ -1,0 +1,58 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <OutputType>WinExe</OutputType>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
+    <UseWPF>true</UseWPF>
+    <ImportWindowsDesktopTargets>true</ImportWindowsDesktopTargets>
+  </PropertyGroup>
+  
+  <ItemGroup>
+	<Resource Include="Assets\Muzic\NewWeek.wav" />
+	<Resource Include="Assets\Muzic\pickup07.wav" />
+	<Resource Include="Assets\Muzic\pobeda.wav" />
+	<Resource Include="Assets\Muzic\temple.mp3" />
+	<Resource Include="Assets\picture\PictureOfTheThirdExercise.png" />
+	<Resource Include="Assets\picture\PictureOfTheFirstExercise.png" />
+	<Resource Include="Assets\picture\PictureOfTheSecondExercise.png" />
+    <Resource Include="Assets\GIF\ImitationOfWebsiteOperation.gif" />
+    <Resource Include="Assets\picture\ButtonHome.png" />
+    <Resource Include="Assets\picture\ButtonInformation.png" />
+    <Resource Include="Assets\picture\ButtonInitialAvatar.jpg" />
+    <Resource Include="Assets\picture\ButtonInterface.png" />
+    <Resource Include="Assets\picture\ButtonNet.png" />
+    <Resource Include="Assets\picture\ButtonSearch.png" />
+    <Resource Include="Assets\picture\ButyonSave.png" />
+  </ItemGroup>
+  <ItemGroup>
+	<Resource Include="Assets\picture\Beta.jpg" />
+	<Resource Include="Assets\picture\Alfa.jpg" />
+	<Resource Include="Assets\picture\Alians.jpg" />
+    <Resource Include="Assets\GIF\ImitationOfWebsiteOperationPlanet.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CSharp" Version="4.7.0" />
+    <PackageReference Include="Microsoft.Data.SqlClient" Version="5.1.5" />
+    <PackageReference Include="Microsoft.Data.SqlClient.SNI.runtime" Version="5.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="8.0.2" />
+    <PackageReference Include="MiNET" Version="1.0.2304" />
+    <PackageReference Include="System.Data.DataSetExtensions" Version="4.5.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
+    <PackageReference Include="System.Drawing.Common" Version="8.0.0" />
+    <PackageReference Include="System.Drawing.Primitives" Version="4.3.0" />
+    <PackageReference Include="XamlAnimatedGif" Version="2.2.3" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Properties\Settings.Designer.cs">
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Update="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+</Project>

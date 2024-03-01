@@ -1,0 +1,67 @@
+﻿<Window x:Class="my_project.WelcomeWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="WelcomeWindow" 
+        Height="240" 
+        MinHeight="240" 
+        Width="190" 
+        MinWidth="190"
+        WindowStyle="None"
+        AllowsTransparency="True" >
+
+    <Window.Resources>
+        <ResourceDictionary Source="Dictionary1.xaml"/>
+    </Window.Resources>
+    <DockPanel 
+        MouseDown="Label_MouseDown" 
+        LastChildFill="True" 
+        Style="{StaticResource GradientBackgraundWindow}">
+        <StackPanel Orientation="Horizontal" 
+                    DockPanel.Dock="Top" 
+                    HorizontalAlignment="Right">
+            <Button Content="_" 
+                    x:Name="btn_Sv" 
+                    Click="Button_Minimized_Window_Click" 
+                    Style="{StaticResource StyleMinimizeWindowButton}"/>
+            <Button Content="X" 
+                    x:Name="btn_Close" 
+                    Click="Button_Close_Window_Click" 
+                    Style="{StaticResource StyleCloseButton}"/>
+        </StackPanel>
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" 
+                        Grid.ColumnSpan="2"
+                        Orientation="Vertical">
+                <Label FontFamily="Comic Sans MS" 
+                       FontSize="16" 
+                       FontWeight="Bold" 
+                       HorizontalAlignment="Center">ЗДРАВСТВУЙТЕ!!!</Label>
+                <Label FontFamily="SimSun" 
+                       FontSize="9" 
+                       HorizontalAlignment="Center">вас привецтвует</Label>
+                <Label HorizontalAlignment="Center" 
+                       Style="{StaticResource NotificationButtonStyle}" 
+                       FontSize="14" 
+                       FontFamily="Arial Black">ProjectGo</Label>
+                <StackPanel Orientation="Vertical">
+                    <Button Content="Вход" 
+                            Style="{StaticResource StyleButtonInterface}" 
+                            Click="Button_Window_Vhod"/>
+                    <Button Content="Регистрация" 
+                            Style="{StaticResource StyleButtonInterface}"
+                            Click="Button_Window_Reg"/>
+                </StackPanel>
+                <Label HorizontalAlignment="Center"
+                       FontSize="8" 
+                       FontFamily="XO Thames"
+                       Style="{StaticResource NewNotificationButtonStyle}">для чего это приложение?</Label>
+            </StackPanel>
+        </Grid>
+    </DockPanel>
+</Window>
